@@ -52,8 +52,8 @@ contract SNT is Token {
     address public owner;                 //Owner of this contract
 
     constructor(uint256 _initialAmount, string memory _tokenName, uint8 _decimalUnits, string  memory _tokenSymbol) {
-        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
-        totalSupply = _initialAmount;                        // Update total supply
+        balances[msg.sender] = _initialAmount*(10**_decimalUnits);               // Give the creator all initial tokens
+        totalSupply = _initialAmount*(10**_decimalUnits);                        // Update total supply
         name = _tokenName;                                   // Set the name for display purposes
         decimals = _decimalUnits;                            // Amount of decimals for display purposes
         symbol = _tokenSymbol;                               // Set the symbol for display purposes
